@@ -1,0 +1,12 @@
+<books>
+    <book>
+        <name>name1</name>
+        <isbn>1234567890</isbn>
+        <price>100.00</price>
+    </book>
+    <book>
+        <name>name2</name>
+        <isbn>1234567891</isbn>
+        <price>102.00</price>
+    </book>
+</books>

@@ -1,9 +1,11 @@
-#! /usr/bin/python
+#!/usr/bin/python3
+
 import os,sys
+
 
 # coding: utf-8
 try:
-    f = open('E:/tmp/test.txt')
+    f = open('./example/test.txt')
     print('文件名：', f.name)
     print('是否处于关闭状态：', f.closed)
     print('打开的模式：', f.mode)
@@ -12,7 +14,7 @@ finally :
     print('是否处于关闭状态：', f.closed)
 
 try:
-    fsock = open('E:/tmp/test.txt', "r")
+    fsock = open('./example/test.txt', "r")
 except IOError:
     print ("The file don't exist, Please double check!")
     exit()
@@ -23,7 +25,7 @@ print ('the postion is %d' %(P))
 fsock.close()
 
 # Read file
-fsock = open("E:/tmp/test.txt", "r")
+fsock = open("./example/test.txt", "r")
 allLines = fsock.readlines()
 # Method 1
 for eachLine in fsock:
@@ -37,7 +39,7 @@ print ('End'+'='*130)
 fsock.close()
 
 # write this file
-fsock = open("E:/tmp/test.txt", "a")
+fsock = open("./example/test.txt", "a")
 fsock.write("""
 # Line 1 Just for test purpose
 # Line 2 Just for test purpose
