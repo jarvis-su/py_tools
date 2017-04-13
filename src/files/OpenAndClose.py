@@ -24,15 +24,15 @@ fsock.close()
 
 # Read file
 fsock = open("E:/tmp/test.txt", "r")
-AllLines = fsock.readlines()
+allLines = fsock.readlines()
 # Method 1
-for EachLine in fsock:
-    print (EachLine)
+for eachLine in fsock:
+    print (eachLine)
 
 # Method 2
 print ('Star'+'='*60)
-for EachLine in AllLines:
-    print (EachLine)
+for eachLine in allLines:
+    print (eachLine)
 print ('End'+'='*130)
 fsock.close()
 
