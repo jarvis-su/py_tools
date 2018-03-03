@@ -12,6 +12,7 @@ def connect_test(db_host,db_user,db_user_pwd,db_database):
     # 关闭数据库连接
     db.close()
 
+
 if __name__ == "__main__":
     db_host = "47.95.235.115"
     db_user = "jarvis_db"
