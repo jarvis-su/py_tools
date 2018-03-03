@@ -20,10 +20,17 @@ for parent, dirnames, filenames in os.walk(rootdir):  # 三个参数：分别返
         print("the full name of the file is:" + os.path.join(parent, filename))
         absoluteFileName = os.path.join(parent, filename)
         absoluteDestFile = os.path.join(dstDir, filename)
-        if os.path.isfile(absoluteDestFile):
-            print("file has been existed" + os.path.getsize(absoluteDestFile))
+        if os.path.exists(absoluteDestFile) and os.path.isfile(absoluteDestFile):
+            stat = os.stat(absoluteDestFile)
+            print("file has been existed")
+            print(stat.st_size)
+            try:
+                print("deleting file " + absoluteFileName)
+                os.remove(absoluteFileName)
+            except:
+                print("unexpected error . %s", sys.exc_info())
         elif filename.endswith(".mp4"):
-            # print(filename)
+            print(filename)
             # print(absoluteDestFile)
             try:
                 shutil.copyfile(absoluteFileName, absoluteDestFile)
