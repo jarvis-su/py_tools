@@ -20,7 +20,16 @@ for parent, dirnames, filenames in os.walk(rootdir):  # 三个参数：分别返
         print("the full name of the file is:" + os.path.join(parent, filename))
         absoluteFileName = os.path.join(parent, filename)
         absoluteDestFile = os.path.join(dstDir, filename)
-        if os.path.exists(absoluteDestFile) and os.path.isfile(absoluteDestFile):
+        if filename.endswith(".xltd"):
+            print("downloading , please do not touch it ")
+        elif filename.endswith(".torrent") or filename.endswith(".JPG"):
+            print("torrent file, do not need it ")
+            try:
+                print("deleting file " + absoluteFileName)
+                os.remove(absoluteFileName)
+            except:
+                print("unexpected error . %s", sys.exc_info())
+        elif os.path.exists(absoluteDestFile) and os.path.isfile(absoluteDestFile):
             stat = os.stat(absoluteDestFile)
             print("file has been existed")
             print(stat.st_size)
@@ -29,7 +38,7 @@ for parent, dirnames, filenames in os.walk(rootdir):  # 三个参数：分别返
                 os.remove(absoluteFileName)
             except:
                 print("unexpected error . %s", sys.exc_info())
-        elif filename.endswith(".mp4"):
+        elif filename.endswith(".mp4") or filename.endswith(".mkv"):
             print(filename)
             # print(absoluteDestFile)
             try:
@@ -40,3 +49,5 @@ for parent, dirnames, filenames in os.walk(rootdir):  # 三个参数：分别返
             except:
                 print("unexpected error . %s", sys.exc_info())
                 exit(1)
+print("Over the processing ,exit")
+exit(0)
