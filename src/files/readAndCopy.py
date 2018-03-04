@@ -22,8 +22,8 @@ for parent, dirnames, filenames in os.walk(rootdir):  # 三个参数：分别返
         absoluteDestFile = os.path.join(dstDir, filename)
         if filename.endswith(".xltd"):
             print("downloading , please do not touch it ")
-        elif filename.endswith(".torrent") or filename.endswith(".JPG"):
-            print("torrent file, do not need it ")
+        elif filename.endswith(".torrent") or filename.endswith(".JPG") or filename.endswith(".jpg") or filename.endswith(".gif") or filename.endswith(".png"):
+            print("do not need it ")
             try:
                 print("deleting file " + absoluteFileName)
                 os.remove(absoluteFileName)
@@ -38,7 +38,7 @@ for parent, dirnames, filenames in os.walk(rootdir):  # 三个参数：分别返
                 os.remove(absoluteFileName)
             except:
                 print("unexpected error . %s", sys.exc_info())
-        elif filename.endswith(".mp4") or filename.endswith(".mkv"):
+        elif filename.endswith(".mp4") or filename.endswith(".mkv") or filename.endswith(".avi"):
             print(filename)
             # print(absoluteDestFile)
             try:
