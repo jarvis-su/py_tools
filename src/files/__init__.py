@@ -4,10 +4,15 @@ import shutil
 import sys
 from sys import exit
 
-file = "F:/tmp/071917_001-caribpr-1080p.mp4"
-try:
-    stat = os.stat(file)
-    print(stat.st_size)
-except:
-    print("unexpected error . %s", sys.exc_info())
-    exit(1)
+def get_file_info():
+    file = "./example/test.txt"
+    try:
+        stat = os.stat(file)
+        print(stat.st_size)
+    except:
+        print("unexpected error . %s", sys.exc_info())
+        exit(1)
+
+
+if __name__ == "__main__":
+    get_file_info()
