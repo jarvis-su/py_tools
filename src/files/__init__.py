@@ -12,7 +12,6 @@ def get_file_info():
     except:
         print("unexpected error . %s", sys.exc_info())
         exit(1)
-
+    get_file_info()
 
 if __name__ == "__main__":
-    get_file_info()

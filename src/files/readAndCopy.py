@@ -38,7 +38,7 @@ for parent, dirnames, filenames in os.walk(rootdir):  # 三个参数：分别返
                 os.remove(absoluteFileName)
             except:
                 print("unexpected error . %s", sys.exc_info())
-        elif filename.endswith(".mp4") or filename.endswith(".mkv") or filename.endswith(".avi"):
+        elif filename.endswith(".mp4") or filename.endswith(".mkv") or filename.endswith(".avi") or filename.endswith(".MP4"):
             print(filename)
             # print(absoluteDestFile)
             try:
